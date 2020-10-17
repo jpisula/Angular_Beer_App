@@ -1,0 +1,18 @@
+<mat-grid-list cols="1" >
+  <h3 *ngIf='!this.areBeersLoaded'>Loading data from server (it might take a while)...</h3>
+  <div class="container">
+    <div class="row beer-rows">
+      <div class="col-4" id='left-list'>
+        <app-beer-list [brewers]="brewersList" *ngIf='this.areBeersLoaded'></app-beer-list>
+      </div>
+  
+      <div class="col-4" id='center-list'>
+        <app-beer-list [brewers]="brewersList" *ngIf='this.areBeersLoaded'></app-beer-list>
+      </div>
+  
+      <div class="col-4" id='right-list'>
+        <app-beer-list [brewers]="brewersList" *ngIf='this.areBeersLoaded'></app-beer-list>
+      </div>
+    </div>
+  </div>
+</mat-grid-list>

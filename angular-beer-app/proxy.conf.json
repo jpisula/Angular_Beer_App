@@ -1,0 +1,10 @@
+{
+    "/*": {
+      "target": "http://ontariobeerapi.ca/beers/",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }

@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Application Options</h1>
+
+<form class='beers-list-form' [formGroup]='form'>
+    <div class='form-group'>
+        <label for='beers-amount-select'>Displayed amount of beer:</label>
+        <select class='form-control' 
+        formControlName='beers_amount' 
+        id='beers_amount'
+        [(value)]='beers_amount' 
+        #selectedBeerAmount
+        (change)='onBeerAmountChange(selectedBeerAmount.value)'>
+            <option *ngFor='let op of beer_options' [value]='op'>
+                {{op}}
+            </option>
+        </select>
+
+        <label for='layout-theme-select'>Layout theme:</label>
+        <select class='form-control' 
+        formControlName='layout_theme' 
+        id='layout_theme'
+        [(value)]='layout_theme' 
+        #selectedLayout
+        (change)='onLayoutThemeChange(selectedLayout.value)'>
+            <option *ngFor='let op of layout_types' [value]='op'>
+                {{op}}
+            </option>
+        </select>
+
+        <label for='sorted-by-select'>Sort lists by:</label>
+        <select class='form-control' 
+        formControlName='sorted_by' 
+        id='sorted_by'
+        [(value)]='sorted_by' 
+        #selectedSortedBy
+        (change)='onSortedByChange(selectedSortedBy.value)'>
+            <option *ngFor='let op of sorted_by_options' [value]='op'>
+                {{op}}
+            </option>
+        </select>
+    </div>
+</form>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button (click)="onSaveClick()">Save</button>
+</div>

@@ -1,0 +1,23 @@
+<!-- Beer Card -->
+<div *ngIf="beerItem" class="card beer-card">
+    <!-- Card content -->
+    <div class="card-body d-flex flex-row card-top">
+        <!-- Beer Thumbnail -->
+        <img src={{beerItem.image_url}} class="rounded-circle mr-4 image" height="40px" width="40px"alt="Image not found" onerror="this.src='./../assets/beer.png';">
+
+        <!-- Title Content -->
+        <div>
+            <!-- Beer Name -->
+            <h4 class="card-title font-weight-bold mb-2">{{beerItem.name}}</h4>
+            <!-- Beer Price -->
+            <p class="card-text">Price: {{beerItem.price}}</p>
+        </div>
+    </div>
+
+    <!-- Card Info -->
+    <div class="card-body">
+        <p><span class='labeled-info'>Type of beer:</span> {{beerItem.type}}</p>
+        <p><span class='labeled-info'>Brewer:</span> {{beerItem.brewer}}</p>
+    </div>
+
+</div>

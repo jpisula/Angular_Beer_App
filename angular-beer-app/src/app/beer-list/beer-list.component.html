@@ -1,0 +1,23 @@
+<form class='beer-list-form' [formGroup]='form'>
+    <div class='form-group'>
+        <label for='brewer-select'>Choose Brewer:</label>
+        <select class='form-control' 
+        formControlName='brewerValue' 
+        id='brewerValue' 
+        [(value)]='brewerValue' 
+        #selectedBrewer
+        (change)='onOptionSelected(selectedBrewer.value)'>
+            <option *ngFor='let brewer of brewers; let i = index' [value]='brewers[i]'>
+                {{brewers[i]}}
+            </option>
+        </select>
+    </div>
+</form>
+
+<ul>
+    <li *ngFor='let beerItem of beersToShow'>
+        <app-beer-item [beerItem]="beerItem"></app-beer-item>
+    </li>
+
+    <button class='load-more-btn' mat-raised-button color="primary" *ngIf='this.isLoadMoreBtnVisible' (click)='loadMoreItems()'>Load more</button>
+</ul>
